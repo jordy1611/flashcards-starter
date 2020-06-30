@@ -6,39 +6,38 @@ const Card = require('../src/Card');
 
 describe('Turn', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
 
     const turn = new Turn();
 
     expect(Turn).to.be.a('function');
   });
 
-  it.skip('should be an instance of Turn', function() {
+  it('should be an instance of Turn', function() {
 
     const turn = new Turn();
 
     expect(turn).to.be.an.instanceOf(Turn);
   });
 
-  it.skip('should take and store a user\'s answer', function() {
+  it('should take and store a user\'s answer', function() {
 
     const turn = new Turn('class');
 
     expect(turn.userAnswer).to.equal('class');
   })
 
-  it.skip('should take a card object and store it ', function() {
+  it('should take a card object and store it ', function() {
 
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('string', card);
 
     expect(turn.userAnswer).to.equal('string');
 
-    expect(turn.cards.length).to.have.lengthOf(1);
-    expect(turn.cards[0]).to.equal(turn); //hopefully this works
+    expect(turn.card).to.equal(card);
   })
 
-  it.skip('should return the user\'s guess', function() {
+  it('should return the user\'s guess', function() {
 
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('string', card);
