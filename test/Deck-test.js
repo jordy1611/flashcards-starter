@@ -1,8 +1,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Deck = require('../src/Turn');
-const Card = require('../src/Turn');
+const Deck = require('../src/Deck.js');
+const Card = require('../src/Turn.js');
 
 describe('Deck', function () {
   var card1;
@@ -45,13 +45,20 @@ describe('Deck', function () {
     expect(deck).to.be.an.instanceOf(Deck);
   })
 
-  it.skip('should have an array of Card objects', function() {
+  it('should have an array of Card objects', function() {
+
+    const deck = new Deck([card1, card2, card3]);
+    expect(deck.cards[0]).to.equal(card1);
+    expect(deck.cards[1]).to.equal(card2);
+    expect(deck.cards[2]).to.equal(card3);
+  })
+
+  it('should count the number of cards in the deck', function() {
 
     const deck = new Deck([card1, card2, card3]);
 
-    expect(deck[0]).to.equal(card1);
-    expect(deck[1]).to.equal(card2);
-    expect(deck[2]).to.equal(card3);
+    var countResult = deck.countCards();
 
+    expect(countResult).to.equal(3);
   })
 })
