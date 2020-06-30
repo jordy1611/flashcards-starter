@@ -4,6 +4,7 @@ const expect = chai.expect;
 const Card = require('../src/Card');
 
 describe('Card', function() {
+  
   var cardInfo;
   beforeEach(function() {
     cardInfo = {
