@@ -72,17 +72,17 @@ describe('Turn', function() {
     expect(guess2).to.equal(true);
   })
 
-  it.skip('should give feedback based on whether the guess is correct or not', function() {
+  it('should give feedback based on whether the guess is correct or not', function() {
 
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn1 = new Turn('String', card);
     const turn2 = new Turn('object', card);
 
-    const feedback1 = turn.giveFeedback(turn1);
+    const feedback1 = turn1.giveFeedback();
 
     expect(feedback1).to.equal('incorrect!');
 
-    const feedback2 = turn.giveFeedback(turn2);
+    const feedback2 = turn2.giveFeedback();
 
     expect(feedback2).to.equal('correct!');
 
