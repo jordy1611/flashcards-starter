@@ -42,9 +42,9 @@ describe('Turn', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('string', card);
 
-    const returnGuess = turn.returnGuess();
+    const returnGuess = turn.returnGuess(card);
 
-    expect(returnGuess).to.equal('string');
+    expect(turn.returnGuess()).to.equal('string');
   })
 
   it.skip('should return the card', function() {
