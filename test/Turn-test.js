@@ -38,4 +38,25 @@ describe('Turn', function() {
     expect(turn.cards[0]).to.equal(turn); //hopefully this works
   })
 
+  it.skip('should return the user\'s guess', function() {
+
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object')
+    const turn = new Turn('String', card);
+
+    const returnGuess = card.returnGuess();
+
+    expect(returnGuess).to.equal('String');
+  })
+
+  it.skip('should return the card', function() {
+
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object')
+    const turn = new Turn('String', card);
+
+    const returnCard = card.returnCard();
+
+    expect(returnCard).to.equal(card);
+  })
+
+  
 });
