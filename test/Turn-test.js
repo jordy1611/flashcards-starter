@@ -47,29 +47,29 @@ describe('Turn', function() {
     expect(turn.returnGuess()).to.equal('string');
   })
 
-  it.skip('should return the card', function() {
+  it('should return the card', function() {
 
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('string', card);
 
     const returnCard = turn.returnCard();
 
-    expect(returnCard).to.equal(card);
+    expect(turn.returnCard()).to.equal(card);
   })
 
-  it.skip('should tell if user\'s guess matches the correct answer', function() {
+  it('should tell if user\'s guess matches the correct answer', function() {
 
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    const turn1 = new Turn('String', card);
+    const turn1 = new Turn('string', card);
     const turn2 = new Turn('object', card);
 
-    const guess1 = turn.evaluateGuess(turn1);
+    const guess1 = turn1.evaluateGuess();
 
     expect(guess1).to.equal(false);
 
-    const guess2 = turn.evaluateGuess(turn2);
+    const guess2 = turn2.evaluateGuess();
 
-    expect(guess1).to.equal(true);
+    expect(guess2).to.equal(true);
   })
 
   it.skip('should give feedback based on whether the guess is correct or not', function() {
