@@ -15,7 +15,6 @@ describe('Card', function() {
     }
   });
 
-
   it('should be a function', function() {
     const card = new Card(cardInfo);
     expect(Card).to.be.a('function');
