@@ -80,4 +80,14 @@ describe('Round', function() {
     expect(this.incorrectGuesses).to.equal([1]);
 
   });
+
+  it.skip('should calculate precentage of correct guesses',function() {
+    expect(round.calculatePercentCorrect()).to.equal(0);
+
+    round.takeTurn('object');
+
+    round.takeTurn('superman');
+
+    expect(round.calculatePercentCorrect()).to.equal(50);    
+  })
 })
