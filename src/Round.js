@@ -20,18 +20,18 @@ class Round {
       this.incorrectGuesses.push(this.currentCard['id']);
     }
     return turn.giveFeedback();
-  } // happens regardless
-  //update index determining current card if answer correct
+  }
 
+  calculatePercentCorrect() {
+    let totalCorrect = this.turnCount - this.incorrectGuesses.length
+    return (totalCorrect / this.turnCount) * 100 || 0;
+  }
 
-  //calc%correct index of card we're on / turns counter
-  //return value
-
-  //endRound logs value in calc%correct
-
-
+  endRound() {
+    let percent = this.calculatePercentCorrect()
+    console.log(`** Round Over! ** You answered ${percent}% of the questions correctly!`);
+    return process.exit();
+  }
 }
-
-
 
 module.exports = Round;
