@@ -44,35 +44,35 @@ describe('Round', function() {
 
   it.skip('should update the amount of turns taken', function() {
     round.takeTurn('batman')
+
     expect(round.turnCount).to.equal(1);
+
     round.takeTurn('spiderman')
+
     expect(round.turnCount).to.equal(2);
   });
 
-  it.skip('should make the next card the current card on a correct guess', function() {
-    var newTurn = round.takeTurn();
+  it.skip('should make the next card the current card on a guess', function() {
+    expect(round.returnCurrentCard()).to.equal(card1);
 
-    expect(newTurn.card).to.not.equal(turn.card);
-    expect(newTurn.card).to.be.an.instanceOf(Round);
+    round.takeTurn('object');
+
+    expect(round.returnCurrentCard()).to.equal(card2);
+
+    round.takeTurn('batman');
+
+    expect(round.returnCurrentCard()).to.equal(card3);
   });
 
-  it.skip('should evaluate all guesses', function() {
-    var roundResult = round.takeTurn();
-    expect(roundResult).to.equal('incorrect!');
-
-    var newTurn1 = new Turn('object', card1);
-
-    roundResult = round.takeTurn();
-    expect(roundResult).to.equal('incorrect!');
+  it.skip('should evaluate incorrect guesses', function() {
+    expect(round.takeTurn('batman')).to.equal('incorrect!');
   });
 
-  it.skip('should record all guesses', function() {
-    var roundResult = round.takeTurn();
-    expect(roundResult).to.equal('incorrect!');
+  it.skip('should evaluate correct guesses', function() {
+    expect(round.takeTurn('array')).to.equal('correct!');
+  });
 
-    var newTurn1 = new Turn('object', card1);
-
-    roundResult = round.takeTurn();
-    expect(roundResult).to.equal('incorrect!');
+  it.skip('should store id\'s of all bad guesses', function() {
+    expect(round.takeTurn('batman')).to.
   });
 })
