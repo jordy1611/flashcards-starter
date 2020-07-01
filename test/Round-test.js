@@ -88,6 +88,18 @@ describe('Round', function() {
 
     round.takeTurn('superman');
 
-    expect(round.calculatePercentCorrect()).to.equal(50);    
+    expect(round.calculatePercentCorrect()).to.equal(50);
+  })
+
+  it.skip('should display a message when round ends', function() {
+    expect(round.endRound()).to.equal('** Round Over! ** You answered 0% of the questions correctly!')
+
+    round.takeTurn('batman');
+
+    expect(round.endRound()).to.equal('** Round Over! ** You answered 0% of the questions correctly!')
+
+    round.takeTurn('array');
+
+    expect(round.endRound()).to.equal('** Round Over! ** You answered 50% of the questions correctly!')
   })
 })
