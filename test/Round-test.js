@@ -57,16 +57,16 @@ describe('Round', function() {
     //Test the new test based on of the this.card of the newly instantiated test is equal to card
     round.takeTurn();
     // userAnswer in turn will be undefined in a turn
-    expect(newTurn.userAnswer).to.equal(undefined);
+    expect(turn.userAnswer).to.equal('');
     expect(newTurn).to.be.an.instanceOf(Round);
-  })
+  });
 
   it.skip('should make the next card the current card on a correct guess', function() {
     var newTurn = round.takeTurn();
 
     expect(newTurn.card).to.not.equal(turn.card);
     expect(newTurn.card).to.be.an.instanceOf(Round);
-  })
+  });
 
   it.skip('should evaluate all guesses', function() {
     var roundResult = round.takeTurn();
@@ -76,7 +76,7 @@ describe('Round', function() {
 
     roundResult = round.takeTurn();
     expect(roundResult).to.equal('incorrect!');
-  })
+  });
 
   it.skip('should record all guesses', function() {
     var roundResult = round.takeTurn();
@@ -86,5 +86,5 @@ describe('Round', function() {
 
     roundResult = round.takeTurn();
     expect(roundResult).to.equal('incorrect!');
-  })
+  });
 })

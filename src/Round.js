@@ -1,30 +1,23 @@
 class Round {
   constructor(deck, turn) {
-    this.deck = deck;
-    this.currentCardIndex = 0;
-    this.currentCard = this.deck[this.currentCardIndex];
-    // use index to determine currentCard
+    this.deck = deck.cards;
+    this.currentCard = this.deck[0];
     this.turnsCount = 0;
-    this.result = '';
     this.incorrectGuesses = [];
   }
 
   returnCurrentCard() {
-    return this.deck.cards[this.currentCardIndex];
+    return this.deck[0];
   }
 
-  takeTurn(userGuess) {
+  takeTurn(userAnswer) {
     this.turnsCount++;
-    let result = turn.giveFeedback(); //should return this can probs do temp var
-    if (turn.evaluateGuess()) {
-      this.currentCardIndex++;
-      turn.card = deck.cards[this.currentCardIndex];
-    } else {
+    let turn = new Turn(userAnswer, this.currentCard);
+    if (!turn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard['id']);
     }
-    turn = new Turn(userAnswer, this.currentCard);
-    return result;
-  }
+    return turn.giveFeedback();
+  } // happens regardless
   //update index determining current card if answer correct
 
 
