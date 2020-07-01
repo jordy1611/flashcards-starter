@@ -73,6 +73,11 @@ describe('Round', function() {
   });
 
   it.skip('should store id\'s of all bad guesses', function() {
-    expect(round.takeTurn('batman')).to.
+    expect(this.incorrectGuesses).to.equal([]);
+
+    round.takeTurn('batman');
+
+    expect(this.incorrectGuesses).to.equal([1]);
+
   });
 })
