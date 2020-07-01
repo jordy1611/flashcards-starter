@@ -21,7 +21,7 @@ describe('Round', function () {
 
     deck = new Deck([card1, card2, card3]);
 
-    turn = new Turn('dinosaur', card2);
+    turn = new Turn('dinosaur', card1);
 
     round = new Round(deck);
   });
@@ -44,10 +44,6 @@ describe('Round', function () {
     expect(currentRoundCard).to.equal(turn.card)
   });
 
-  it.skip('should create a new instance of turn when a guess is made', function() {
-    
-  })
-
   it.skip('should update the amount of turns taken', function() {
     round.takeTurn()
     expect(round.turnCount).to.equal(1);
@@ -55,5 +51,27 @@ describe('Round', function () {
     expect(round.turnCount).to.equal(2);
   });
 
-  it.skip('should ')
+  it.skip('should create a new instance of turn when a guess is made', function() {
+    // turn takes a user guess and a card
+    //Have 3 cards at the beginning of the test.
+    //Test the new test based on of the this.card of the newly instantiated test is equal to card
+    var newTurn = round.takeTurn();
+    // userAnswer in turn will be undefined in a turn
+    expect(newTurn.userAnswer).to.equal(undefined);
+    expect(newTurn).to.be.an.instanceOf(Round);
+  })
+
+  it.skip('should make the next card the current card on a correct guess', function() {
+    var newTurn = round.takeTurn();
+
+    expect(newTurn.card).to.not.equal(turn.card);
+    expect(newTurn.card).to.be.an.instanceOf(Round);
+  })
+
+  it.skip('should evaluate and record all guesses', function() {
+    
+    var newTurn1 = round.takeTurn();
+
+    expect(round.)
+  })
 })
