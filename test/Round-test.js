@@ -55,7 +55,7 @@ describe('Round', function() {
     // turn takes a user guess and a card
     //Have 3 cards at the beginning of the test.
     //Test the new test based on of the this.card of the newly instantiated test is equal to card
-    var newTurn = round.takeTurn();
+    round.takeTurn();
     // userAnswer in turn will be undefined in a turn
     expect(newTurn.userAnswer).to.equal(undefined);
     expect(newTurn).to.be.an.instanceOf(Round);
