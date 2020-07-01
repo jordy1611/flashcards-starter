@@ -4,6 +4,7 @@ const expect = chai.expect;
 const Round = require('../src/Round.js')
 const Deck = require('../src/Deck.js');
 const Card = require('../src/Turn.js');
+const cardsData = require('../src/data.js').prototypeData;
 
 describe('Round', function () {
 
@@ -11,29 +12,15 @@ describe('Round', function () {
   var card2;
   var card3;
   var deck;
-  beforeEach(function() {
-    card1 = {
-      "id": 1,
-      "question": "What allows you to define a set of related information using key-value pairs?",
-      "answers": ["object", "array", "function"],
-      "correctAnswer": "object"
-    };
-
-    card2 = {
-      "id": 2,
-      "question": "What is a comma-separated list of related values?",
-      "answers": ["array", "object", "function"],
-      "correctAnswer": "array"
-    };
-
-    card3 = {
-      "id": 3,
-      "question": "What type of prototype method directly modifies the existing array?",
-      "answers": ["mutator method", "accessor method", "iteration method"],
-      "correctAnswer": "mutator method"
-    };
+  var turn;
+  before(function() {
+    card1 = cardsData[0];
+    card2 = cardsData[1];
+    card3 = cardsData[2];
 
     deck = new Deck([card1, card2, card3]);
+
+    turn = new Turn('dinosaur', card2)
   });
 
   it('should be a function', function() {
@@ -56,5 +43,16 @@ describe('Round', function () {
 
     expect(round.deck).to.deepEqual([card1, card2, card3]);
 
-  })
+  });
+
+  it.skip('should return the current card', function() {
+
+    const round = new Round(deck);
+
+    currentRoundCard = round.returnCurrentCard();
+
+    expect(currentRoundCard).to.equal(turn.card)
+  });
+
+  it.skip('should')
 })
