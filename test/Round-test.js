@@ -6,7 +6,7 @@ const Deck = require('../src/Deck.js');
 const Card = require('../src/Turn.js');
 const cardsData = require('../src/data.js').prototypeData;
 
-describe('Round', function () {
+describe('Round', function() {
 
   var card1;
   var card2;
@@ -15,9 +15,9 @@ describe('Round', function () {
   var turn;
   var round;
   before(function() {
-    card1 = cardsData[0];
-    card2 = cardsData[1];
-    card3 = cardsData[2];
+    card1 = new Card(cardsData[0]);
+    card2 = new Card(cardsData[1]);
+    card3 = new Card(cardsData[2]);
 
     deck = new Deck([card1, card2, card3]);
 
@@ -35,7 +35,7 @@ describe('Round', function () {
   });
 
   it.skip('should have a deck', function() {
-    expect(round.deck).to.deepEqual([card1, card2, card3]);
+    expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
   it.skip('should return the current card', function() {
@@ -68,10 +68,23 @@ describe('Round', function () {
     expect(newTurn.card).to.be.an.instanceOf(Round);
   })
 
-  it.skip('should evaluate and record all guesses', function() {
-    
-    var newTurn1 = round.takeTurn();
+  it.skip('should evaluate all guesses', function() {
+    var roundResult = round.takeTurn();
+    expect(roundResult).to.equal('incorrect!');
 
-    expect(round.)
+    var newTurn1 = new Turn('object', card1);
+
+    roundResult = round.takeTurn();
+    expect(roundResult).to.equal('incorrect!');
+  })
+
+  it.skip('should record all guesses', function() {
+    var roundResult = round.takeTurn();
+    expect(roundResult).to.equal('incorrect!');
+
+    var newTurn1 = new Turn('object', card1);
+
+    roundResult = round.takeTurn();
+    expect(roundResult).to.equal('incorrect!');
   })
 })

@@ -3,17 +3,13 @@ const expect = chai.expect;
 
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
+const cardsData = require('../src/data.js').prototypeData;
 
 describe('Turn', function() {
 
   var cardInfo;
   beforeEach(function() {
-    cardInfo = {
-      "id": 1,
-      "question": "What allows you to define a set of related information using key-value pairs?",
-      "answers": ["object", "array", "function"],
-      "correctAnswer": "object"
-    }
+    cardInfo = cardData[0];
   });
 
   it('should be a function', function() {

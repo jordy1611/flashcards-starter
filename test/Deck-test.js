@@ -5,15 +5,15 @@ const Deck = require('../src/Deck.js');
 const Card = require('../src/Turn.js');
 const cardsData = require('../src/data.js').prototypeData;
 
-describe('Deck', function () {
-  
+describe('Deck', function() {
+
   var card1;
   var card2;
   var card3;
   before(function() {
-    card1 = cardsData[0];
-    card2 = cardsData[1];
-    card3 = cardsData[2];
+    card1 = new Card(cardsData[0]);
+    card2 = new Card(cardsData[1]);
+    card3 = new Card(cardsData[2]);
   });
 
   it('should be a function', function() {

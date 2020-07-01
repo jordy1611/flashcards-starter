@@ -1,14 +1,29 @@
 class Round {
-  constructor(deck) {
+  constructor(deck, turn) {
     this.deck = deck;
+    this.turn = turn;
+    this.currentCardIndex = 0;
     // use index to determine currentCard
-    // counter for turns, default 0
-
+    this.turnsCount = 0;
+    this.result = '';
+    this.incorrectGuesses = [];
   }
 
+  returnCurrentCard() {
+    return deck.card[this.currentCardIndex];
+  }
 
-//
-  //takeTurn()
+  takeTurn(turn) {
+    this.turnsCount++;
+    turn.evaluateGuess();
+    this.result = turn.giveFeedback(); //should return this
+    if (turn.evaluateGuess()) {
+      this.currentCardIndex++;
+      turn.card = this.deck[this.currentCardIndex];
+    } else {
+
+    }
+  }
   //update index determining current card if answer correct
 
 
