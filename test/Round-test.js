@@ -39,26 +39,14 @@ describe('Round', function() {
   });
 
   it.skip('should return the current card', function() {
-    currentRoundCard = round.returnCurrentCard();
-
-    expect(currentRoundCard).to.equal(turn.card)
+    expect(round.returnCurrentCard()).to.equal(card1)
   });
 
   it.skip('should update the amount of turns taken', function() {
-    round.takeTurn()
+    round.takeTurn('batman')
     expect(round.turnCount).to.equal(1);
-    round.takeTurn()
+    round.takeTurn('spiderman')
     expect(round.turnCount).to.equal(2);
-  });
-
-  it.skip('should create a new instance of turn when a guess is made', function() {
-    // turn takes a user guess and a card
-    //Have 3 cards at the beginning of the test.
-    //Test the new test based on of the this.card of the newly instantiated test is equal to card
-    round.takeTurn();
-    // userAnswer in turn will be undefined in a turn
-    expect(turn.userAnswer).to.equal('');
-    expect(newTurn).to.be.an.instanceOf(Round);
   });
 
   it.skip('should make the next card the current card on a correct guess', function() {
