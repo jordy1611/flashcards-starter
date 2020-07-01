@@ -13,6 +13,7 @@ describe('Round', function () {
   var card3;
   var deck;
   var turn;
+  var round;
   before(function() {
     card1 = cardsData[0];
     card2 = cardsData[1];
@@ -20,39 +21,39 @@ describe('Round', function () {
 
     deck = new Deck([card1, card2, card3]);
 
-    turn = new Turn('dinosaur', card2)
+    turn = new Turn('dinosaur', card2);
+
+    round = new Round(deck);
   });
 
   it('should be a function', function() {
-
-    const round = new Round();
-
     expect(Round).to.be.a('function');
   });
 
   it('should be an instance of Deck', function() {
-
-    const round = new Round();
-
     expect(round).to.be.an.instanceOf(Round);
   });
 
   it.skip('should have a deck', function() {
-
-    const round = new Round(deck);
-
     expect(round.deck).to.deepEqual([card1, card2, card3]);
-
   });
 
   it.skip('should return the current card', function() {
-
-    const round = new Round(deck);
-
     currentRoundCard = round.returnCurrentCard();
 
     expect(currentRoundCard).to.equal(turn.card)
   });
 
-  it.skip('should')
+  it.skip('should create a new instance of turn when a guess is made', function() {
+    
+  })
+
+  it.skip('should update the amount of turns taken', function() {
+    round.takeTurn()
+    expect(round.turnCount).to.equal(1);
+    round.takeTurn()
+    expect(round.turnCount).to.equal(2);
+  });
+
+  it.skip('should ')
 })
