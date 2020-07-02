@@ -7,7 +7,6 @@ const Card = require('../src/Card.js');
 const cardsData = require('../src/data.js').prototypeData;
 
 describe('Round', function() {
-
   var card1;
   var card2;
   var card3;
