@@ -7,9 +7,13 @@ const cardsData = require('../src/data.js').prototypeData;
 
 describe('Turn', function() {
 
-  var cardInfo;
+  var card
   beforeEach(function() {
-    cardInfo = cardData[0];
+    card = new Card(
+      1,
+      'What allows you to define a set of related information using key-value pairs?',
+      ['object', 'array', 'function'],
+      'object');
   });
 
   it('should be a function', function() {
@@ -34,8 +38,6 @@ describe('Turn', function() {
   })
 
   it('should take a card object and store it ', function() {
-
-    const card = new Card(cardInfo);
     const turn = new Turn('string', card);
 
     expect(turn.userAnswer).to.equal('string');
@@ -44,8 +46,6 @@ describe('Turn', function() {
   })
 
   it('should return the user\'s guess', function() {
-
-    const card = new Card(cardInfo);
     const turn = new Turn('string', card);
 
     const returnGuess = turn.returnGuess(card);
@@ -54,8 +54,6 @@ describe('Turn', function() {
   })
 
   it('should return the card', function() {
-
-    const card = new Card(cardInfo);
     const turn = new Turn('string', card);
 
     const returnCard = turn.returnCard();
@@ -64,8 +62,6 @@ describe('Turn', function() {
   })
 
   it('should tell if user\'s guess matches the correct answer', function() {
-
-    const card = new Card(cardInfo);
     const turn1 = new Turn('string', card);
     const turn2 = new Turn('object', card);
 
@@ -79,8 +75,6 @@ describe('Turn', function() {
   })
 
   it('should give feedback based on whether the guess is correct or not', function() {
-
-    const card = new Card(cardInfo);
     const turn1 = new Turn('string', card);
     const turn2 = new Turn('object', card);
 

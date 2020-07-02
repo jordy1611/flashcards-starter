@@ -40,3 +40,4 @@ describe('Game', function() {
   //   expect(game.currentRound.deck.length).to.equal(30);
   // });
 });
+// cd turing/2module/projects/JS-Flash-Cards/
