@@ -1,7 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
 const Game = require('../src/Game.js');
-const cardsData = require('../src/data.js').prototypeData;
 
 describe('Game', function() {
   var game;

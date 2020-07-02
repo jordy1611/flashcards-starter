@@ -23,8 +23,8 @@ class Round {
   }
 
   calculatePercentCorrect() {
-    let totalCorrect = Math.floor(this.turnCount - this.incorrectGuesses.length);
-    return (totalCorrect / this.turnCount) * 100 || 0;
+    let totalCorrect = this.turnCount - this.incorrectGuesses.length;
+    return Math.floor(totalCorrect / this.turnCount) * 100 || 0;
   }
 
   endRound() {

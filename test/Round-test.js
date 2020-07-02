@@ -4,7 +4,6 @@ const expect = chai.expect;
 const Round = require('../src/Round.js')
 const Deck = require('../src/Deck.js');
 const Card = require('../src/Card.js');
-const cardsData = require('../src/data.js').prototypeData;
 
 describe('Round', function() {
   var card1, card2, card3, deck, round;
@@ -84,7 +83,7 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([1]);
   });
 
-  it('should calculate precentage of correct guesses',function() {
+  it('should calculate precentage of correct guesses', function() {
     expect(round.calculatePercentCorrect()).to.equal(0);
 
     round.takeTurn('object');

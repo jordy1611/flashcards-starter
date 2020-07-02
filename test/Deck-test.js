@@ -3,7 +3,6 @@ const expect = chai.expect;
 
 const Deck = require('../src/Deck.js');
 const Card = require('../src/Turn.js');
-const cardsData = require('../src/data.js').prototypeData;
 
 describe('Deck', function() {
   var card1, card2, card3;

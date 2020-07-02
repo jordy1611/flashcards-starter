@@ -1,9 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
-
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
-const cardsData = require('../src/data.js').prototypeData;
 
 describe('Turn', function() {
   var card;
@@ -46,8 +44,6 @@ describe('Turn', function() {
 
   it('should return the user\'s guess', function() {
     const turn = new Turn('string', card);
-
-    const returnGuess = turn.returnGuess(card);
 
     expect(turn.returnGuess()).to.equal('string');
   })
