@@ -15,7 +15,7 @@ class Game {
   makeCards(cardsData) {
   // let cards = cardsData.map(card => new Card(card));
   // return cards;
-  return cardsData.map(card => new Card(card));
+  return cardsData.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
   };
 
 
