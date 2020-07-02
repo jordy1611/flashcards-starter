@@ -24,7 +24,8 @@ class Game {
     const deck = new Deck(cards);
     const round = new Round(deck);
     this.currentRound = round;
-    
+    this.printMessage(deck, round);
+    this.printQuestion(round);
   }
   //start instantiates cards, deck, round
   // invokes printMessage
