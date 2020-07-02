@@ -1,5 +1,5 @@
 const data = require('./data');
-const prototypeQuestions = data.prototypeData;
+const cardsData = data.prototypeData;
 const util = require('./util');
 const Round = require('../src/Round.js');
 const Turn = require('../src/Turn.js');
@@ -12,9 +12,17 @@ class Game {
     this.currentRound = null;
 }
 
+  makeCards(cardsData) {
+  let cards = cardsData.map(card => new Card(card));
+  return cards;
+  };
+
 
   start() {
-    let card
+    const cards = this.makeCards(cardsData);
+    const deck = new Deck(cards);
+    const round = new Round(deck);
+    this.currentRound = round;
   }
   //start instantiates cards, deck, round
   // invokes printMessage

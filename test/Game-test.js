@@ -1,11 +1,13 @@
 const chai = require('chai');
 const expect = chai.expect;
 
+const Game = require('../src/Game.js');
 const Round = require('../src/Round.js');
-const Turn = require('../src/Turn.js');
+const Turn = require('../src/Turn.js'); // don't need
 const Deck = require('../src/Deck.js');
 const Card = require('../src/Card.js');
 const cardsData = require('../src/data.js').prototypeData;
+
 describe('Game', function() {
   var card1;
   var card2;
@@ -33,11 +35,13 @@ describe('Game', function() {
 
   it('should have currentRound set to null to start off', function() {
     expect(game.currentRound).to.equal(null);
-  })
+  });
 
-  it('should create cards, put them in an array and instantiate a new round');
-    game.start();
+  it('should create cards, put them in an arrayand ', function() {
+    game.start()
+    expect(game.makeCards(cardsData)[0]).to.equal(card1);
 
     expect(game.currentRound.deck.length).to.equal(30);
     expect(game.currentRound.deck[0]).to.deep.equal(card1);
-})
+  });
+});
