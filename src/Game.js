@@ -2,22 +2,19 @@ const data = require('./data');
 const cardsData = data.prototypeData;
 const util = require('./util');
 const Round = require('../src/Round.js');
-const Turn = require('../src/Turn.js');
 const Deck = require('../src/Deck.js');
 const Card = require('../src/Card.js');
 
 
 class Game {
-  constructor(round) {
+  constructor() {
     this.currentRound = null;
-}
+  }
 
   makeCards(cardsData) {
-  // let cards = cardsData.map(card => new Card(card));
-  // return cards;
-  return cardsData.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
-  };
-
+    return cardsData.map(card => new Card(card.id, card.question, card.answers,
+      card.correctAnswer));
+  }
 
   start() {
     const cards = this.makeCards(cardsData);
@@ -27,15 +24,14 @@ class Game {
     this.printMessage(deck, round);
     this.printQuestion(round);
   }
-  //start instantiates cards, deck, round
-  // invokes printMessage
-  printMessage(deck, round) {
+
+  printMessage(deck) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 
   printQuestion(round) {
-      util.main(round);
+    util.main(round);
   }
 }
 

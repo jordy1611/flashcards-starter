@@ -7,12 +7,7 @@ const Card = require('../src/Card.js');
 const cardsData = require('../src/data.js').prototypeData;
 
 describe('Round', function() {
-  var card1;
-  var card2;
-  var card3;
-  var deck;
-  var turn;
-  var round;
+  var card1, card2. card3, deck, round;
   beforeEach(function() {
     card1 = new Card(
       1,
@@ -87,14 +82,12 @@ describe('Round', function() {
     round.takeTurn('batman');
 
     expect(round.incorrectGuesses).to.deep.equal([1]);
-
   });
 
   it('should calculate precentage of correct guesses',function() {
     expect(round.calculatePercentCorrect()).to.equal(0);
 
     round.takeTurn('object');
-
     round.takeTurn('superman');
 
     expect(round.calculatePercentCorrect()).to.equal(50);

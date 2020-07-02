@@ -3,7 +3,6 @@ const Turn = require('../src/Turn.js')
 class Round {
   constructor(deck) {
     this.deck = deck.cards;
-  //  this.currentCard = this.returnCurrentCard(); //do I need this? returnCurrent does this
     this.turnCount = 0;
     this.incorrectGuesses = [];
   }
@@ -18,13 +17,13 @@ class Round {
     this.turnCount++;
     this.deck.shift();
     if (!turn.evaluateGuess()) {
-      this.incorrectGuesses.push(currentCard.id); //error here, can't read id of undefined
+      this.incorrectGuesses.push(currentCard.id);
     }
     return turn.giveFeedback();
   }
 
-  calculatePercentCorrect() { //round it?
-    let totalCorrect = this.turnCount - this.incorrectGuesses.length
+  calculatePercentCorrect() {
+    let totalCorrect = Math.floor(this.turnCount - this.incorrectGuesses.length);
     return (totalCorrect / this.turnCount) * 100 || 0;
   }
 

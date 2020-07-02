@@ -6,7 +6,6 @@ const Card = require('../src/Turn.js');
 const cardsData = require('../src/data.js').prototypeData;
 
 describe('Deck', function() {
-
   var card1;
   var card2;
   var card3;
