@@ -9,19 +9,14 @@ const Card = require('../src/Card.js');
 const cardsData = require('../src/data.js').prototypeData;
 
 describe('Game', function() {
-  var card1;
-  var card2;
-  var card3;
-  var deck;
-  var turn;
-  var round;
+  var card1; //can go away
   var game;
   beforeEach(function() {
-    card1 = new Card(cardsData[0]);
-    card2 = new Card(cardsData[1]); //can go away
-    card3 = new Card(cardsData[2]); //can go away
-    deck = new Deck([card1, card2, card3]); //can go away
-    round = new Round(deck); //can go away
+    card1 = new Card( //can go away
+      1,
+      'What allows you to define a set of related information using key-value pairs?',
+      ['object', 'array', 'function'],
+      'object');
     game = new Game()
   });
 
