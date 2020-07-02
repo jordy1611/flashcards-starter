@@ -13,8 +13,9 @@ class Game {
 }
 
   makeCards(cardsData) {
-  let cards = cardsData.map(card => new Card(card));
-  return cards;
+  // let cards = cardsData.map(card => new Card(card));
+  // return cards;
+  return cardsData.map(card => new Card(card));
   };
 
 
@@ -23,6 +24,7 @@ class Game {
     const deck = new Deck(cards);
     const round = new Round(deck);
     this.currentRound = round;
+    
   }
   //start instantiates cards, deck, round
   // invokes printMessage

@@ -37,11 +37,11 @@ describe('Game', function() {
     expect(game.currentRound).to.equal(null);
   });
 
-  it('should create cards, put them in an arrayand ', function() {
+  it('should create cards, put them in an array start a new round', function() {
     game.start()
-    expect(game.makeCards(cardsData)[0]).to.equal(card1);
+
+    expect(game.currentRound.deck[0]).to.equal();
 
     expect(game.currentRound.deck.length).to.equal(30);
-    expect(game.currentRound.deck[0]).to.deep.equal(card1);
   });
 });
