@@ -6,7 +6,7 @@ const Card = require('../src/Card');
 const cardsData = require('../src/data.js').prototypeData;
 
 describe('Turn', function() {
-  var card
+  var card;
   beforeEach(function() {
     card = new Card(
       1,
