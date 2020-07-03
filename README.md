@@ -6,13 +6,13 @@ In this project, I am writing code in order to create a terminal based flashcard
 
 ## Functionality
 The user can initialize the game in the terminal when the in the program's directory.
-![Gif of game starting]()
+![Gif of game starting](assets/gameBegin.gif)
 
 The user can select an answer using the arrow keys or typing the relevant number. They can the submit their answer using the return/enter key. The game will display the result of the user's answer. The user can use the return/enter key to move on to the next card.
-![Gif of user answering a question and moving on to the next]()
+![Gif of user answering a question and moving on to the next](assets/gamePlay.gif)
 
 When the user submits their answer on the last card the game displays a message and the percentage of correct answers.
-![Gif of last answer being submitted]()
+![Gif of last answer being submitted](assets/gameEnd.gif)
 
 ## Installation
 * Optional fork your own personal repo
