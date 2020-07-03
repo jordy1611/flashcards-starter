@@ -14,21 +14,18 @@ describe('Turn', function() {
   });
 
   it('should be a function', function() {
-
     const turn = new Turn();
 
     expect(Turn).to.be.a('function');
   });
 
   it('should be an instance of Turn', function() {
-
     const turn = new Turn();
 
     expect(turn).to.be.an.instanceOf(Turn);
   });
 
   it('should take and store a user\'s answer', function() {
-
     const turn = new Turn('class');
 
     expect(turn.userAnswer).to.equal('class');
@@ -50,8 +47,6 @@ describe('Turn', function() {
 
   it('should return the card', function() {
     const turn = new Turn('string', card);
-
-    const returnCard = turn.returnCard();
 
     expect(turn.returnCard()).to.equal(card);
   })
